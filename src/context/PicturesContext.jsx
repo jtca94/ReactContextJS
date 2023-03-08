@@ -10,6 +10,20 @@ export const PicturesContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [favorite, setFavorite] = useState([]);
 
+  const handleLikeToggle = (item) => {
+    const { id } = item;
+    // por cada item que recorro, si el id del item es igual al id del item que estoy recorriendo, entonces es favorito.
+    const isFavorite = favorite.some(i => i.id === id);
+    if (isFavorite) {
+      // si es favorito, filtro el array de favoritos y me quedo con los que no sean el id del item clickeado pasado por prop.
+      setFavorite(favorite.filter((i) => i.id !== id));
+    } else {
+      // si no es favorito, agrego el item clickeado al array de favoritos.
+      setFavorite([...favorite, item]);
+    }
+
+  }
+
   const getPictures = async () => {
 
     try {
@@ -30,7 +44,7 @@ export const PicturesContextProvider = ({ children }) => {
 
 
   return (
-    <PicturesContext.Provider value={{data, setData, favorite, setFavorite}} >
+    <PicturesContext.Provider value={{data, setData, favorite, handleLikeToggle}} >
       {children}
     </PicturesContext.Provider>
   );
