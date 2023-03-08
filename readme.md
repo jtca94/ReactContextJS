@@ -10,6 +10,7 @@ To run the app, follow these steps:
 2. Open the terminal and navigate to the project directory.
 3. Run `npm install` to install the dependencies.
 4. Run `npm start` to start the app.
+5. You can visit this link to see the deploy https://rococo-yeot-20983c.netlify.app/
 
 ## Usage
 
