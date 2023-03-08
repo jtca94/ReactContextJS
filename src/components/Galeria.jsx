@@ -7,7 +7,6 @@ export default function Home() {
   const { data, handleLikeToggle, favorite } = usePictureContext();
 
 
-  console.log(favorite)
   return (
     <div className="row g-3">
 

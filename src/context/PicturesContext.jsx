@@ -44,7 +44,7 @@ export const PicturesContextProvider = ({ children }) => {
 
 
   return (
-    <PicturesContext.Provider value={{data, setData, favorite, handleLikeToggle}} >
+    <PicturesContext.Provider value={{data, favorite, handleLikeToggle}} >
       {children}
     </PicturesContext.Provider>
   );
